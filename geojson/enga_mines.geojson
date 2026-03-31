@@ -1,0 +1,54 @@
+{
+    "type": "FeatureCollection",
+    "features": [
+      {
+        "type": "Feature",
+        "properties": {
+          "name": "Porgera Gold Mine (Main Pit)",
+          "type": "Gold Mine",
+          "status": "Active",
+          "operator": "New Porgera Limited"
+        },
+        "geometry": {
+          "type": "Point",
+          "coordinates": [143.123, -5.463]
+        }
+      },
+      {
+        "type": "Feature",
+        "properties": {
+          "name": "Porgera Processing Plant",
+          "type": "Processing Facility",
+          "status": "Active"
+        },
+        "geometry": {
+          "type": "Point",
+          "coordinates": [143.115, -5.470]
+        }
+      },
+      {
+        "type": "Feature",
+        "properties": {
+          "name": "Porgera Waste Rock Dumps",
+          "type": "Mining Infrastructure",
+          "status": "Active"
+        },
+        "geometry": {
+          "type": "Point",
+          "coordinates": [143.130, -5.455]
+        }
+      },
+      {
+        "type": "Feature",
+        "properties": {
+          "name": "Porgera Tailings Area",
+          "type": "Tailings",
+          "status": "Active"
+        },
+        "geometry": {
+          "type": "Point",
+          "coordinates": [143.140, -5.480]
+        }
+      }
+    ]
+  }
