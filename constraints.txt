@@ -1,0 +1,4 @@
+# setuptools>=81 removed Distribution.dry_run; pyrobuf (pyrosm) still uses it.
+# Use: pip install -c constraints.txt -r requirements.txt
+# Docker sets PIP_CONSTRAINT so isolated builds for pyrobuf see this too.
+setuptools>=70,<81

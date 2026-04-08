@@ -1,3 +1,8 @@
+# pyrobuf (via pyrosm) uses Distribution.dry_run; removed in setuptools>=81.
+# Prefer: pip install -c constraints.txt -r requirements.txt
+setuptools>=70,<81
 pyrosm
 geopandas
 requests
+numpy
+rasterio
