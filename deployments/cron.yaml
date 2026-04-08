@@ -48,7 +48,8 @@ spec:
                 name: s3-credentials
             volumeMounts:
             - name: input-pvc
-              mountPath: /data/in
+              mountPath: /data
+              subPath: in
           - name: processing
             image: harbor.shared.acrist-services.com/dsy/asinatra-processing:v1.0.0
             command: ["/bin/sh", "-c"]
@@ -57,7 +58,8 @@ spec:
               sleep 500
             volumeMounts:
             - name: input-pvc
-              mountPath: /data/in
+              mountPath: /data
+              subPath: in
             - name: output-pvc
               mountPath: /data/out
           containers:
