@@ -51,7 +51,7 @@ spec:
               mountPath: /data/in
               subPath: in
           - name: processing
-            image: harbor.shared.acrist-services.com/dsy/asinatra-processing:v1.0.0
+            image: harbor.shared.acrist-services.com/dsy/asinatra-processing:v1.0.1
             command: ["/bin/sh", "-c"]
             args:
             - |
