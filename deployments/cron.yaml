@@ -37,7 +37,7 @@ spec:
             - |
               aws s3 cp  "s3://backup-common/asinatra/in" /data/in \
                 --endpoint-url https://zoned-ecs.acrist-services.com --recursive
-              sleep 100
+              sleep 10
             env:
             - name: AWS_REQUEST_CHECKSUM_CALCULATION
               value: when_required
@@ -51,7 +51,11 @@ spec:
               mountPath: /data/in
               subPath: in
           - name: processing
-            image: harbor.shared.acrist-services.com/dsy/asinatra-processing:v1.0.0 
+            image: harbor.shared.acrist-services.com/dsy/asinatra-processing:v1.0.0
+            command: ["/bin/sh", "-c"]
+            args:
+            - |
+              sleep 500
             volumeMounts:
             - name: input-pvc
               mountPath: /data/in
