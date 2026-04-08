@@ -49,7 +49,6 @@ spec:
             volumeMounts:
             - name: input-pvc
               mountPath: /data/in
-              subPath: in
           - name: processing
             image: harbor.shared.acrist-services.com/dsy/asinatra-processing:v1.0.0
             command: ["/bin/sh", "-c"]
