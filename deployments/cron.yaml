@@ -48,7 +48,7 @@ spec:
                 name: s3-credentials
             volumeMounts:
             - name: input-pvc
-              mountPath: /data
+              mountPath: /data/in
               subPath: in
           - name: processing
             image: harbor.shared.acrist-services.com/dsy/asinatra-processing:v1.0.0
@@ -58,10 +58,11 @@ spec:
               sleep 500
             volumeMounts:
             - name: input-pvc
-              mountPath: /data
+              mountPath: /data/in
               subPath: in
             - name: output-pvc
               mountPath: /data/out
+              subPath: out
           containers:
           - name: upload
             image: amazon/aws-cli:2.27.22
