@@ -14,6 +14,14 @@ spec:
         spec:
           imagePullSecrets:
           - name: harbor-registry
+          tolerations:
+          - key: type
+            operator: Equal
+            value: processing
+            effect: PreferNoSchedule
+          nodeSelector:
+            type: processing
+            kubernetes.io/hostname: prowork714209
           volumes:
             - name: input-pvc
               persistentVolumeClaim:
