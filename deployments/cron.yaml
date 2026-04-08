@@ -35,7 +35,7 @@ spec:
             command: ["/bin/sh", "-c"]
             args:
             - |
-              aws s3 cp  "s3://backup-common/asinatra/in" /data/in \
+              aws s3 cp  "s3://backup-common/asinatra/in" /data \
                 --endpoint-url https://zoned-ecs.acrist-services.com --recursive
               sleep 10
             env:
@@ -68,7 +68,8 @@ spec:
             args:
             - |
               sleep 50
-              aws s3 cp /data/out "s3://backup-common/asinatra/out" \
+              aws s3 cp /data/out/ "s3://backup-common/asinatra/out/" \
+                --recursive \
                 --endpoint-url https://zoned-ecs.acrist-services.com
               sleep 100
             env:

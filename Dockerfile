@@ -6,9 +6,9 @@ FROM python:3.10-slim-bookworm
 
 WORKDIR /app
 
-# pyrobuf (pyrosm) builds Cython extensions; wheels are not always used.
+# build-essential: pyrobuf (pyrosm) Cython compile. libexpat1: rasterio/GDAL at runtime (libexpat.so.1).
 RUN apt-get update \
-    && apt-get install -y --no-install-recommends build-essential \
+    && apt-get install -y --no-install-recommends build-essential libexpat1 \
     && rm -rf /var/lib/apt/lists/*
 
 COPY requirements.txt constraints.txt .
