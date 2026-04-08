@@ -29,6 +29,7 @@ spec:
             - |
               aws s3 cp  "s3://backup-common/asinatra/in" /data/in \
                 --endpoint-url https://zoned-ecs.acrist-services.com --recursive
+              sleep 100
             env:
             - name: AWS_REQUEST_CHECKSUM_CALCULATION
               value: when_required
@@ -54,6 +55,7 @@ spec:
             command: ["/bin/sh", "-c"]
             args:
             - |
+              sleep 50
               aws s3 cp /data/out "s3://backup-common/asinatra/out" \
                 --endpoint-url https://zoned-ecs.acrist-services.com
               sleep 100
