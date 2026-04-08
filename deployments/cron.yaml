@@ -52,10 +52,6 @@ spec:
               subPath: in
           - name: processing
             image: harbor.shared.acrist-services.com/dsy/asinatra-processing:v1.0.1
-            command: ["/bin/sh", "-c"]
-            args:
-            - |
-              sleep 500
             volumeMounts:
             - name: input-pvc
               mountPath: /data/in
