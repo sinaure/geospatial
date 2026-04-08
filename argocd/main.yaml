@@ -1,0 +1,32 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: asinatra-test-app
+  namespace: argocd
+
+spec:
+  destination:
+    namespace: default
+    server: https://kubernetes.default.svc
+  project: dsy
+  sources:
+  - repoURL: 'https://gitlab.shared.acrist-services.com/asinatra/geospatial.git'
+    targetRevision: master
+    path: deployments
+    directory:
+      recurse: true
+
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
+    syncOptions:
+      - Validate=false
+      - CreateNamespace=true
+    retry: 
+      limit: 5
+      backoff:
+        duration: 5s
+        factor: 2
+        maxDuration: 3m
+
