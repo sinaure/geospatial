@@ -37,7 +37,6 @@ spec:
             - |
               aws s3 cp "s3://backup-common/asinatra/in/" /data/in/ \
                 --endpoint-url https://zoned-ecs.acrist-services.com --recursive
-              sleep 10
             env:
             - name: AWS_REQUEST_CHECKSUM_CALCULATION
               value: when_required
